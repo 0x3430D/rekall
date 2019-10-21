@@ -107,9 +107,14 @@ class Netstat(common.LinuxPlugin):
             unix_sock = sock.dereference_as("unix_sock")
             name = unix_sock.addr.name[0].sun_path
 
+            if hasattr(unix_sock.addr.refcnt, 'refcounter'):
+                count = unix_sock.addr.refcnt.refcounter
+            else:
+                count = unix_sock.addr.refcnt.counter
+
             renderer.table_row(
                 "UNIX",
-                unix_sock.addr.refcnt.refcounter,
+                count,
                 sock.sk_type,
                 sk_common.skc_state,
                 iaddr.i_ino,
