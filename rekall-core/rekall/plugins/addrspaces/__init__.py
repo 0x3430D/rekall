@@ -18,6 +18,7 @@ from rekall.plugins.addrspaces import mips
 from rekall.plugins.addrspaces import mmap_address_space
 from rekall.plugins.addrspaces import pagefile
 from rekall.plugins.addrspaces import vmi
+from rekall.plugins.addrspaces import qmp
 
 try:
     from rekall.plugins.addrspaces import pmem

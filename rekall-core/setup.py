@@ -71,6 +71,7 @@ install_requires = [
     'rekall-capstone==3.0.5.post2',
     "rekall-efilter==1.6",
     'pypykatz>=0.0.6;python_version>="3.6"',
+    'qmp',
 
     # Should match exactly the version of this package.
     'rekall-lib',
